@@ -90,27 +90,18 @@ $(function() {
     }
     
     $('.create-column')
-    .click(function(){
-        var name = prompt('Enter a column name');
-        var column = new Column(name);
-        board.addColumn(column);
-    });
-    
-    // TWORZENIE KOLUMN
-    var todoColumn = new Column('To do');
-    var doingColumn = new Column('Doing');
-    var doneColumn = new Column('Done');
+        .click(function(){
+            var name = prompt('Enter a column name');
+            var column = new Column(name);
+            board.addColumn(column);
+        });
 
     // DODAWANIE KOLUMN DO TABLICY
-    board.addColumn(todoColumn);
-    board.addColumn(doingColumn);
-    board.addColumn(doneColumn);
-
-    // TWORZENIE NOWYCH EGZEMPLARZY KART
-    var card1 = new Card('New task');
-    var card2 = new Card('Create kanban boards');
+    board.addColumn(new Column('To do'));
+    board.addColumn(new Column('Doing'));
+    board.addColumn(new Column('Done'));
 
     // DODAWANIE KART DO KOLUMN
-    todoColumn.addCard(card1);
-    doingColumn.addCard(card2);
+    todoColumn.addCard(new Card('New task'));
+    doingColumn.addCard(new Card('Create kanban boards'));
 });
