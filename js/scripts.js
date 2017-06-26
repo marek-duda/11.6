@@ -96,10 +96,15 @@ $(function() {
             board.addColumn(column);
         });
 
+    // TWORZENIE KOLUMN
+    var todoColumn = new Column('To do');
+    var doingColumn = new Column('Doing');
+    var doneColumn = new Column('Done');
+
     // DODAWANIE KOLUMN DO TABLICY
-    board.addColumn(new Column('To do'));
-    board.addColumn(new Column('Doing'));
-    board.addColumn(new Column('Done'));
+    board.addColumn(todoColumn);
+    board.addColumn(doingColumn);
+    board.addColumn(doneColumn);
 
     // DODAWANIE KART DO KOLUMN
     todoColumn.addCard(new Card('New task'));
